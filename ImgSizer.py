@@ -1,4 +1,7 @@
 from PIL import Image
+from Panel import Panel
+
+p = Panel()
 
 image = Image.open('nyancat_2.jpg')
 
@@ -10,7 +13,10 @@ for x in range(width):
     for y in range(height):
         cpixel = pixels[x, y]
         all_pixels.append(cpixel)
+count = 0
+for i in range(width):
+    for j in range(height):
+        p.setPixel(i,j,all_pixels[count],0.2)
+        count += 1
 
-print(all_pixels)
-#new_image = image.resize((42, 35))
-#new_image.save('nyancat_2.jpg')
+p.show()
