@@ -3,7 +3,8 @@ from Panel import Panel
 
 p = Panel()
 
-image = Image.open('nyancat_2.jpg')
+image = Image.open('rematch.jpg')
+image = image.resize(42,35)
 
 pixels = image.load() # this is not a list, nor is it list()'able
 width, height = image.size
