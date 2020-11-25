@@ -1,9 +1,11 @@
 from PIL import Image
 from Panel import Panel
+import sys
+
 
 p = Panel()
 
-image = Image.open('nyancat_2.jpg')
+image = Image.open(sys.argv[1])
 image = image.resize((42,35))
 
 pixels = image.load() # this is not a list, nor is it list()'able
