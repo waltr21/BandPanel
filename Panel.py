@@ -45,8 +45,9 @@ class Panel:
         return (col[1] * b, col[0] * b, col[2] * b)
 
     def setBackground(self, col):
-        for i in range(self.size):
-            self.pixels[i] = self.getColor(col)
+        self.pixels.fill(self.getColor(col))
+        #for i in range(self.size):
+            #self.pixels[i] = self.getColor(col)
 
     def setPixel(self, x, y, col, brightness=-1):
         self.pixels[self.grid[x][y]] = self.getColor(col, brightness)

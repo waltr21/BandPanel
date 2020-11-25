@@ -6,8 +6,8 @@ import random
 p = Panel()
 
 squares = []
-for i in range(4):
-    temp = Square(7,7,(255,0,0),p)
+for i in range(30):
+    temp = Square(3,3,(255,0,0),p)
     temp.x = random.randint(0, p.width)
     temp.y = random.randint(0, p.height)
     temp.col = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
