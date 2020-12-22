@@ -57,3 +57,11 @@ class Panel:
 
     def getMillis(self):
         return int(round(time.time() * 1000))
+
+    def sideScroll(self):
+        while (i < self.width):
+            while(j < self.height):
+               self.pixels[self.grid[i][j]] = self.getColor(100,0,0, brightness)
+               i += 1
+               j+= 1
+            

@@ -3,8 +3,8 @@ import random
 class Square:
     def __init__(self, w, h, c, p):
         # Top left x/y coordinates of the square.
-        self.x = 0
-        self.y = 0
+        self.x = random.randint(0,p.width)
+        self.y = random.randint(0,p.height)
 
         # Dimensions of the square
         self.width = w
@@ -29,8 +29,7 @@ class Square:
         self.y += self.velocity[1]
         #self.brightness += self.bAdjust
         self.bound()
-
-
+        self.show()
 
     def bound(self):
         if (self.x < 0):
@@ -58,3 +57,18 @@ class Square:
         for curX in range(roundX, roundX + self.width):
             for curY in range(roundY, roundY + self.height):
                 self.panel.setPixel(curX, curY, self.col, self.brightness)
+
+class BouncingSquares():
+    def __init__(self, w, h, numSquares, p):
+        self.squares = []
+        self.panelRef = p
+        #col = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
+
+        for i in range(numSquares):
+            col = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
+            self.squares.append(Square(w,h,col,p))
+
+    def update(self):
+        self.panelRef.setBackground((0,0,0))
+        for i in self.squares:
+            i.update()

@@ -18,10 +18,10 @@ stamp = p.getMillis()
 fRate = 60.0
 while True:
     if (p.getMillis() - stamp > (1/fRate) * 1000):
-        #p.setBackground((0,0,0))
-        #for square in squares:
-            #square.update()
-            #square.show()
-        d.update()
+        p.setBackground((0,0,0))
+        for square in squares:
+            square.update()
+            square.show()
+        #d.update()
         p.show()
         stamp = p.getMillis()
