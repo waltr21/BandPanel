@@ -10,7 +10,7 @@ class Panel:
         self.size = self.width * self.height
         self.grid = None
         self.initGrid()
-        self.brightness = 0.05
+        self.brightness = 0.8
         self.pixels = neopixel.NeoPixel(board.D18, self.size, auto_write=False)
 
     def initGrid(self):
